@@ -1,0 +1,71 @@
+<script>
+    let defaultPlayback = 0.7
+    var vid = document.getElementsByTagName("video")
+    setTimeout(()=>{        
+        setPlayback()
+    }, 1000)
+
+    function setPlayback() {
+        for (let index = 0; index < vid.length; index++) {
+            vid[index].playbackRate = defaultPlayback
+        }
+    }
+
+    function changeSpeed(n) {
+        defaultPlayback = defaultPlayback + n
+        setPlayback()
+    }
+</script>
+
+<style>
+    div {
+        float: left;
+    }
+</style>
+
+<h2>Each video will navigate you to a larger study</h2>
+<div>
+    <a href="#" onclick="javascript:changeSpeed(0.1)">+ increase speed</a> <a href="#" onclick="javascript:changeSpeed(-0.1)">- decrease speed</a>
+</div>
+
+<br><br><br>
+
+<div>
+    <video width="320" height="240" controls autoplay loop muted>
+        <source src="./anime/vid0.mp4" type="video/mp4">
+    </video>
+    <br>
+    <a href="./anime/index.html">Anime</a>
+</div>
+
+<div>
+    <video width="320" height="240" controls autoplay loop muted>
+        <source src="./berserk/vid0.mp4" type="video/mp4">
+    </video>
+    <br>
+    <a href="./berserk/index.html">Berserk</a>
+</div>
+
+<div>
+    <video width="320" height="240" controls autoplay loop muted>
+        <source src="./carnage/vid0.mp4" type="video/mp4">
+    </video>
+    <br>
+    <a href="./carnage/index.html">Carnage</a>
+</div>
+
+<div>
+    <video width="320" height="240" controls autoplay loop muted>
+        <source src="./venom/vid0.mp4" type="video/mp4">
+    </video>
+    <br>
+    <a href="./venom/index.html">Venom</a>
+</div>
+
+<div>
+    <video width="320" height="240" controls autoplay loop muted>
+        <source src="./spiderman/vid0.mp4" type="video/mp4">
+    </video>
+    <br>
+    <a href="./spiderman/index.html">Spiderman</a>
+</div>
