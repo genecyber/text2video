@@ -1,12 +1,33 @@
 <script>
-    setTimeout(()=>{
-        var vid = document.getElementsByTagName("video")
-        for (let index = 0; index < vid.length; index++) {
-            vid[index].playbackRate = 0.7
-        }
+    let defaultPlayback = 0.7
+    var vid = document.getElementsByTagName("video")
+    setTimeout(()=>{        
+        setPlayback()
     }, 1000)
-    
+
+    function setPlayback() {
+        for (let index = 0; index < vid.length; index++) {
+            vid[index].playbackRate = defaultPlayback
+        }
+    }
+
+    function changeSpeed(n) {
+        defaultPlayback = defaultPlayback + n
+        setPlayback()
+    }
 </script>
+
+<style>
+    div {
+        float: left;
+    }
+</style>
+<div>
+    <a href="../index.html"><<-back</a> | <a href="#" onclick="javascript:changeSpeed(0.1)">+ increase speed</a> | <a href="#" onclick="javascript:changeSpeed(-0.1)">- decrease speed</a>
+</div>
+
+<br><br><br>
+
 <video width="320" height="240" controls autoplay loop muted>
     <source src="vid1.mp4" type="video/mp4">
 </video>
